@@ -144,8 +144,6 @@ function gMap () {
 	};
 }
 
-
-
 // instance of fuction while Document ready event	
 jQuery(document).on('ready', function () {
 	(function ($) {
