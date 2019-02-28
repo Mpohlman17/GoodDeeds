@@ -62,7 +62,7 @@ class Form extends React.Component {
         <br />
         <input type='submit' value='Submit' className='inputButton' />
         <br />
-        {!this.state.ifErrorMessage ? (
+        {this.state.ifErrorMessage ? (
           <div className='loginError'>
             There was a problem with the login. Please try again.
           </div>
