@@ -6,3 +6,18 @@
 .row {
     margin: 5px;
 }
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.page-header-title {
+    color: white;
+    font-size: 25px;
+    padding: 0 0 0 100px;
+}
+
+.card-header {
+    font-weight: bold;
+    background-color: rgb(193, 235, 248);
+}
