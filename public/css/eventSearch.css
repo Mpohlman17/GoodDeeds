@@ -21,3 +21,20 @@
     font-weight: bold;
     background-color: rgb(193, 235, 248);
 }
+#event-info,
+#charity-info  {
+        display: inline-block;
+        overflow: auto;        
+        height: 700px;
+      }
+
+/* .hideContent {
+    overflow: hidden;
+    line-height: 1em;
+    height: 2em;
+}
+
+.showContent {
+    line-height: 1em;
+    height: auto;
+}       */
