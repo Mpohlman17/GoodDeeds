@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Form from '../Form/Form'
-import logo from './logo.png'
+import logo from './gooddeedslogo.svg'
 
 class LoginPage extends Component {
   render () {
