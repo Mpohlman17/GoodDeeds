@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700');
 
-* {
+/* * {
     font-family: 'Poppins', sans-serif;
-}
+} */
 
 html {
     background-color: rgb(240, 240, 240);
@@ -19,7 +19,6 @@ html {
     display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 12%;
 }
 
 .headerArea {
@@ -43,6 +42,9 @@ html {
 .inputButton {
     background-color: #24c4f4;
     margin: 0 0 20px 0;
+    width: 100px;
+    height: 30px;
+
 }
 
 .inputButton:hover {
