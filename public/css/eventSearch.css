@@ -17,8 +17,7 @@
     font-weight: bold;
     background-color: rgb(193, 235, 248);
 }
-#event-info,
-#charity-info  {
+#deed-info  {
         display: inline-block;
         overflow: auto;        
         height: 700px;
