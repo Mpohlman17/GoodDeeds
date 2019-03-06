@@ -13,8 +13,7 @@
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <!-- Responsive -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <link href="css/responsive.css" rel="stylesheet">
     <link href="css/userpage.css" rel="stylesheet">
     <link href="css/search.css" rel="stylesheet">
@@ -129,25 +128,24 @@
                     <!-- search form             -->
                     <form method="POST" class="discover__form" action="/search">
                         <div class="row justify-content-md-center">
-                            <input class="discover__form-input" type="text" name="place_event"
-                                placeholder="Zip Code" id="place_event">
-                            <select class="discover__form-input js-example-basic-multiple"
-                                id="radius" name="radius">
-                                <option selected disabled>Radius</option>
+                            <input class="discover__form-input" type="text" name="place_event" placeholder="Zip Code"
+                                id="zipCodeInput">
+                            <select class="discover__form-input js-example-basic-multiple" id="mileageInput" name="radius">
+                                <option selected disabled>Radius (mi)</option>
                                 <option>5</option>
                                 <option>10</option>
                                 <option>15</option>
                                 <option>20</option>
                                 <option>25</option>
                             </select>
-                            <select class="discover__form-input js-example-basic-multiple"
-                                id="certified" name="certified">
+                            <select class="discover__form-input js-example-basic-multiple" id="selectorDropdown"
+                                name="certified">
                                 <option selected disabled>Charities/charity events</option>
                                 <option>Local Charities</option>
                                 <option>Charity Events</option>
                             </select>
 
-                            <button class="btn-default btn-default-red" type="submit">
+                            <button class="btn-default btn-default-red" type="submit" id="searchBtn">
                                 <i class="fa fa-search" aria-hidden="true"></i>
                                 Search
                             </button>
@@ -175,7 +173,7 @@
                     <h3>Charities <span>around you</span></h3>
                     <p></p>
                 </div>
-                <div class="row">
+                <div class="row" id="deed-info">
                     <div class="image-column col-md-4 col-sm-6 col-xs-12">
                         <div class="image-holder">
                             <div class="image-content">
@@ -266,8 +264,8 @@
                             <li><a href="#">2</a></li>
                             <li><a href="#">3</a></li>
                             <li><a href="#">4</a></li>
-                            <li><a class="next" href="#"><span class="fa fa-angle-right"
-                                        aria-hidden="true"></span></a></li>
+                            <li><a class="next" href="#"><span class="fa fa-angle-right" aria-hidden="true"></span></a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -313,6 +311,7 @@
     <script src="js/bootstrap-select.min.js"></script>
     <script type="text/javascript" src="js/jquery-ui.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/deedSearch.js"></script>
 </body>
 
 </html>
