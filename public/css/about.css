@@ -1,0 +1,6 @@
+/* styling to work with the BalanceText jQuery plugin */
+.balance-text {
+    text-wrap: balance;
+    /* Apply (proposed) CSS style */
+}
+

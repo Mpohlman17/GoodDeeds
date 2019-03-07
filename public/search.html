@@ -6,17 +6,24 @@
     <title>Charity Search</title>
     <!-- Stylesheets -->
     <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/revolution-slider.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <!--Favicon-->
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <!-- Responsive -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <link href="css/responsive.css" rel="stylesheet">
     <link href="css/userpage.css" rel="stylesheet">
     <link href="css/search.css" rel="stylesheet">
     <link href="css/eventSearch.css" rel="stylesheet">
+
+
+
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
 </head>
 
 
@@ -36,7 +43,7 @@
                     <div class="col-md-12 text-center">
                         <div class="main-logo">
                             <figure>
-                                <a href="index.html"><img src="images/gooddeedslogo.svg" alt=""></a>
+                                <a href="home.html"><img src="images/gooddeedslogo.svg" alt=""></a>
                             </figure>
                         </div>
                     </div>
@@ -59,9 +66,9 @@
 
                             <div class="navbar-collapse collapse clearfix">
                                 <ul class="navigation clearfix">
-                                    <li class="current"><a href="index.html">Home</a></li>
+                                    <li class="current"><a href="home.html">Home</a></li>
                                     <li><a href="about.html">About</a></li>
-                                    <li><a href="contact-us.html">Contact</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
                                 </ul>
                             </div>
                         </nav>
@@ -76,7 +83,7 @@
                 <div class="container clearfix">
                     <!--Logo-->
                     <div class="logo">
-                        <a href="index.html"><img src="images/logo-2.png" alt=""></a>
+                        <a href="home.html"><img src="images/gooddeedslogo_blk.svg" alt=""></a>
                     </div>
 
                     <!--Right Col-->
@@ -95,9 +102,9 @@
 
                             <div class="navbar-collapse collapse clearfix">
                                 <ul class="navigation clearfix">
-                                    <li class="current"><a href="index.html">Home</a></li>
+                                    <li class="current"><a href="home.html">Home</a></li>
                                     <li><a href="about.html">About</a></li>
-                                    <li><a href="contact-us.html">Contact</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
                                 </ul>
                             </div>
                         </nav><!-- Main Menu End-->
@@ -120,12 +127,13 @@
                         <p></p>
                     </div>
 
-                    <!-- search form             -->
+                    <!-- search form-->
                     <form method="POST" class="discover__form" action="/search">
                         <div class="row justify-content-md-center">
-                            <input class="discover__form-input" type="text" name="place_event" placeholder="Zip Code"
-                                id="zipCodeInput">
-                            <select class="discover__form-input js-example-basic-multiple" id="mileageInput" name="radius">
+                            <input class="discover__form-input" type="text" name="place_event"
+                                placeholder="Zip Code" id="zipCodeInput">
+                            <select class="discover__form-input js-example-basic-multiple"
+                                id="mileageInput" name="radius">
                                 <option selected disabled>Radius (mi)</option>
                                 <option>5</option>
                                 <option>10</option>
@@ -133,14 +141,15 @@
                                 <option>20</option>
                                 <option>25</option>
                             </select>
-                            <select class="discover__form-input js-example-basic-multiple" id="selectorDropdown"
-                                name="certified">
+                            <select class="discover__form-input js-example-basic-multiple"
+                                id="selectorDropdown" name="certified">
                                 <option selected disabled>Charities/charity events</option>
                                 <option>Local Charities</option>
                                 <option>Charity Events</option>
                             </select>
 
-                            <button class="btn-default btn-default-red" type="submit" id="searchBtn">
+                            <button class="btn-default btn-default-red" type="submit"
+                                id="searchBtn">
                                 <i class="fa fa-search" aria-hidden="true"></i>
                                 Search
                             </button>
@@ -259,7 +268,8 @@
                             <li><a href="#">2</a></li>
                             <li><a href="#">3</a></li>
                             <li><a href="#">4</a></li>
-                            <li><a class="next" href="#"><span class="fa fa-angle-right" aria-hidden="true"></span></a>
+                            <li><a class="next" href="#"><span class="fa fa-angle-right"
+                                        aria-hidden="true"></span></a>
                             </li>
                         </ul>
                     </div>
@@ -275,7 +285,7 @@
                 <div class="widgets-section">
                     <div class="footer-column text-center">
                         <div class="footer-logo">
-                            <a href="index.html"><img src="images/logo-2.png" alt=""></a>
+                            <a href="home.html"><img src="images/logo-2.png" alt=""></a>
                         </div>
                     </div>
                 </div>
