@@ -15,5 +15,6 @@ input, select, .btn-default {
     margin: 0 5px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 2px;
-    background-color: rgb(224, 217, 217);
+    background-color: rgb(201, 240, 252);
+    color: black;
 }
