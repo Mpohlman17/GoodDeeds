@@ -13,17 +13,11 @@
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <!-- Responsive -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <link href="css/responsive.css" rel="stylesheet">
     <link href="css/userpage.css" rel="stylesheet">
     <link href="css/search.css" rel="stylesheet">
     <link href="css/eventSearch.css" rel="stylesheet">
-
-
-
-    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
-    <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
 </head>
 
 
@@ -130,10 +124,10 @@
                     <!-- search form-->
                     <form method="POST" class="discover__form" action="/search">
                         <div class="row justify-content-md-center">
-                            <input class="discover__form-input" type="text" name="place_event"
-                                placeholder="Zip Code" id="zipCodeInput">
-                            <select class="discover__form-input js-example-basic-multiple"
-                                id="mileageInput" name="radius">
+                            <input class="discover__form-input" type="text" name="place_event" placeholder="Zip Code"
+                                id="zipCodeInput">
+                            <select class="discover__form-input js-example-basic-multiple" id="mileageInput"
+                                name="radius">
                                 <option selected disabled>Radius (mi)</option>
                                 <option>5</option>
                                 <option>10</option>
@@ -141,15 +135,14 @@
                                 <option>20</option>
                                 <option>25</option>
                             </select>
-                            <select class="discover__form-input js-example-basic-multiple"
-                                id="selectorDropdown" name="certified">
+                            <select class="discover__form-input js-example-basic-multiple" id="selectorDropdown"
+                                name="certified">
                                 <option selected disabled>Charities/charity events</option>
                                 <option>Local Charities</option>
                                 <option>Charity Events</option>
                             </select>
 
-                            <button class="btn-default btn-default-red" type="submit"
-                                id="searchBtn">
+                            <button class="btn-default btn-default-red" type="submit" id="searchBtn">
                                 <i class="fa fa-search" aria-hidden="true"></i>
                                 Search
                             </button>
@@ -157,12 +150,18 @@
                             <!--button type="submit" id="displayMap"></button-->
                         </div>
                     </form>
+                    <section class="google-map-area">
+                        <div class="container">
+                            <div class="google-map" id="contact-google-map2" data-map-lat="44.799511"
+                                data-map-lng="-106.951309" data-icon-path="images/resource/map-marker.png"
+                                data-map-title="Sheridan School Special Education" data-map-zoom="12" data-markers='{
+                                "marker-1": [44.799511, -106.951309, "<h4>Sheridan School Special Education</h4><p>201 N Connor St Sheridan, WY 82801</p>","images/resource/map-marker.png"]
+                            }'>
 
+                            </div>
+                        </div>
 
-
-
-
-                    <img src="images/background/sample_map.png" alt="map">
+                    </section>
                 </div>
                 <!-- End map block -->
             </div>
@@ -268,8 +267,7 @@
                             <li><a href="#">2</a></li>
                             <li><a href="#">3</a></li>
                             <li><a href="#">4</a></li>
-                            <li><a class="next" href="#"><span class="fa fa-angle-right"
-                                        aria-hidden="true"></span></a>
+                            <li><a class="next" href="#"><span class="fa fa-angle-right" aria-hidden="true"></span></a>
                             </li>
                         </ul>
                     </div>
@@ -313,8 +311,13 @@
     <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
     <script src="js/jquery.bxslider.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/bootstrap-select.min.js"></script>
     <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
+    <!-- gmap helper -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHzPSV2jshbjI8fqnC_C4L08ffnj5EN3A"></script>
+    <!--gmap script-->
+    <script src="js/gmaps.js"></script>
+    <script src="js/map-helper.js"></script>
     <script src="js/script.js"></script>
     <script src="js/deedSearch.js"></script>
 </body>
