@@ -1,6 +1,6 @@
 "use strict"; // Start of use strict
 
-// 7. google map
+//google map
 function gMap () {
 	if ($('.google-map').length) {
         $('.google-map').each(function () {
