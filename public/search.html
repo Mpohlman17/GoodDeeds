@@ -112,6 +112,44 @@
         <!--Page Title-->
         <section class="explore">
             <div class="explore__map-side">
+
+                <br>
+                <br>
+                <div class="sec-title text-center">
+                    <h3>CHARITIES<span> near you</span></h3>
+                    <p></p>
+                </div>
+
+                <!-- search form-->
+                <form method="POST" class="discover__form" action="/search">
+                    <div class="row justify-content-md-center">
+                        <input class="discover__form-input" type="text" name="place_event" placeholder="Zip Code"
+                            id="zipCodeInput">
+                        <select class="discover__form-input js-example-basic-multiple" id="mileageInput" name="radius">
+                            <option selected disabled>Radius (mi)</option>
+                            <option>5</option>
+                            <option>10</option>
+                            <option>15</option>
+                            <option>20</option>
+                            <option>25</option>
+                        </select>
+                        <select class="discover__form-input js-example-basic-multiple" id="selectorDropdown"
+                            name="certified">
+                            <option selected disabled>Charities/charity events</option>
+                            <option>Local Charities</option>
+                            <option>Charity Events</option>
+                        </select>
+
+                        <button class="btn-default btn-default-red" type="submit" id="searchBtn">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                            Search
+                        </button>
+                        </input>
+                        <!--button type="submit" id="displayMap"></button-->
+                    </div>
+                </form>
+
+
                 <!-- map block -->
                 <div id="map" data-map-zoom="9">
                     <br>
@@ -164,10 +202,18 @@
                     </section>
                 </div>
                 <!-- End map block -->
+
             </div>
+
         </section>
         <!--End Page Title-->
-
+        <!-- map block -->
+        <br>
+        <br>
+        <div id="map" data-map-zoom="9"></div>
+        <br>
+        <br>
+        <!-- End map block -->
 
         <!--couses-section-->
         <section class="couses-section">
@@ -176,6 +222,7 @@
                     <h3>Charities <span>around you</span></h3>
                     <p></p>
                 </div>
+
                 <div class="row" id="deed-info">
                     <div class="image-column col-md-4 col-sm-6 col-xs-12">
                         <div class="image-holder">
@@ -320,6 +367,7 @@
     <script src="js/map-helper.js"></script>
     <script src="js/script.js"></script>
     <script src="js/deedSearch.js"></script>
+    <script src="js/googleApi.js"></script>
 </body>
 
 </html>
