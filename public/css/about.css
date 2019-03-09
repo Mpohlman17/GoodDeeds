@@ -6,7 +6,7 @@
 
 .page-wrapper {
     margin: 0 auto;
-    text-align: center
+    /* text-align: center */
 }
 
 #error404 {
@@ -34,5 +34,9 @@
 
 .error {
     font-size: 260px;
+}
+
+.team-profile {
+    background-color: rgb(215, 244, 253);
 }
 
