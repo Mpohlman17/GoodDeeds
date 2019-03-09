@@ -42,6 +42,13 @@
     width: 96%;
   }
 
+  @media only screen and (max-width: 400px) {
+    #map {
+        height: 275px;
+        width: 320px;
+    }
+  }
+
 /* .hideContent {
     overflow: hidden;
     line-height: 1em;
