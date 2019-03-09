@@ -4,7 +4,7 @@
 }
 
 .row {
-    margin: 5px;
+    margin: 0 auto;
 }
 
 .page-header-title {
@@ -16,17 +16,38 @@
 .card-header {
     font-weight: bold;
     background-color: rgb(193, 235, 248);
+    padding: 5px;
 }
 #deed-info  {
-        display: inline-block;
+        /* display: inline-block; */
         overflow: auto;        
         height: 700px;
+        margin: 0 auto;
+        width: 75%;
 }
 
 #map {
     height: 350px;
-    width: 450px;
-}
+    width: 650px;
+} 
+
+@media only screen and (max-width: 500px) {
+    #map {
+        height: 300px;
+        width: 400px;
+    }
+  }
+
+  #deed-info {
+    width: 96%;
+  }
+
+  @media only screen and (max-width: 400px) {
+    #map {
+        height: 275px;
+        width: 320px;
+    }
+  }
 
 /* .hideContent {
     overflow: hidden;
