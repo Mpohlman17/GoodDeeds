@@ -6,7 +6,6 @@ $('#searchBtn').on('click', function (event) {
   // clears data input from API's
   ClearFields()
   let searchOption = $('#selectorDropdown').val()
-  console.log(searchOption)
   if (searchOption === 'Charity Events') {
     // event search function
     const token = 'LTV5SOWTS6QBZF72VGDA'
@@ -30,8 +29,6 @@ $('#searchBtn').on('click', function (event) {
         for (var i = 0; i < results.length; i++) {
           let name = results[i].name.text
           let description = results[i].description.text
-          let start = results[i].start.local
-          let end = results[i].end.local
           let url = results[i].url
           // let showMore = "<div class='show-more'><a href='#'>Show more</a></div>"
           let infoCard = $("<div class ='card'>")
@@ -40,17 +37,18 @@ $('#searchBtn').on('click', function (event) {
           let eventDescription = $("<p class='card-text hideContent'>").text(
             'Description: ' + description
           )
-          let eventStart = $("<p class='card-text'>").text('Start: ' + start)
-          let eventEnd = $("<p class='card-text'>").text('End: ' + end)
+
           let eventLink = $('<a>').text('Tickets and Additional Details')
 
           eventLink.attr('href', url)
 
           infoCard.append(eventName, infoCardBody)
-          infoCardBody.append(eventDescription, eventStart, eventEnd, eventLink)
+          infoCardBody.append(eventDescription, eventLink)
 
           $('#deed-info').prepend(infoCard)
         }
+        
+        
       })
   } else if (searchOption === 'Local Charities') {
     // charit search function
@@ -112,5 +110,4 @@ $('#searchBtn').on('click', function (event) {
 
 function ClearFields () {
   document.getElementById('deed-info').innerHTML = ''
-  // document.getElementById('charity-info').innerHTML = ''
 }
