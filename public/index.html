@@ -106,27 +106,12 @@
                     <h3>local <span>charities</span></h3>
                     <p>Based on your location we suggest the following charities around you</p>
                 </div>
-
                 <!--Start Google map area-->
-                <section class="google-map-area">
-                    <div class="container">
-                        <div class="google-map" id="contact-google-map" data-map-lat="44.799511"
-                            data-map-lng="-106.951309"
-                            data-icon-path="images/resource/map-marker.png"
-                            data-map-title="Sheridan School Special Education" data-map-zoom="12"
-                            data-markers='{
-                    "marker-1": [44.799511, -106.951309, "","images/resource/map-marker.png"]
-                }'>
-
-                        </div>
-                    </div>
-
-                </section>
-                <br>
+                <div id="contact-google-map"></div>
                 <br>
 
-                <div class="row">
-                    <div class="image-column col-md-4 col-sm-6 col-xs-12">
+                <div class="row" id="charity">
+                    <!--div class="image-column col-md-4 col-sm-6 col-xs-12">
                         <div class="image-holder">
                             <div class="image-content">
                                 <h5>Charity Name<br>2nd line text</h5>
@@ -158,7 +143,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div-->
                 </div>
             </div>
         </section>
@@ -244,107 +229,7 @@
                         <br>
                         <br>
 
-                        <div class="events-slide">
-                            <div class="slide-item">
-                                <div class="left-side">
-                                    <div class="image-box">
-                                        <figure>
-                                            <a href="#"><img src="images/testimonials/1.jpg"
-                                                    alt=""></a>
-                                        </figure>
-                                    </div>
-                                    <h5>DATE</h5>
-                                </div>
-                                <div class="right-side comment">
-                                    <a href=#>
-                                        <h4>Event Name</h4>
-                                    </a>
-                                    <ul>
-                                        <li><i class="fa fa-clock-o" aria-hidden="true"></i>Time
-                                        </li>
-                                        <li><i class="fa fa-map-marker"
-                                                aria-hidden="true"></i>Location</li>
-                                    </ul>
-                                    <p>Commodo consequat. Duis aute irure dolor in repreh enderit in
-                                        voluptate velit esse cillum dolore eu fugiat nulla pariatur
-                                        sint occaecat.</p>
-                                </div>
-                            </div>
-                            <div class="slide-item">
-                                <div class="left-side">
-                                    <div class="image-box">
-                                        <figure>
-                                            <a href="#"><img src="images/testimonials/1.jpg"
-                                                    alt=""></a>
-                                        </figure>
-                                    </div>
-                                    <h5>DATE</h5>
-                                </div>
-                                <div class="right-side comment">
-                                    <a href=#>
-                                        <h4>Event Name</h4>
-                                    </a>
-                                    <ul>
-                                        <li><i class="fa fa-clock-o" aria-hidden="true"></i>Time
-                                        </li>
-                                        <li><i class="fa fa-map-marker"
-                                                aria-hidden="true"></i>Location</li>
-                                    </ul>
-                                    <p>Commodo consequat. Duis aute irure dolor in repreh enderit in
-                                        voluptate velit esse cillum dolore eu fugiat nulla pariatur
-                                        sint occaecat.</p>
-                                </div>
-                            </div>
-                            <div class="slide-item">
-                                <div class="left-side">
-                                    <div class="image-box">
-                                        <figure>
-                                            <a href="#"><img src="images/testimonials/1.jpg"
-                                                    alt=""></a>
-                                        </figure>
-                                    </div>
-                                    <h5>DATE</h5>
-                                </div>
-                                <div class="right-side comment">
-                                    <a href=#>
-                                        <h4>Event Name</h4>
-                                    </a>
-                                    <ul>
-                                        <li><i class="fa fa-clock-o" aria-hidden="true"></i>Time
-                                        </li>
-                                        <li><i class="fa fa-map-marker"
-                                                aria-hidden="true"></i>Location</li>
-                                    </ul>
-                                    <p>Commodo consequat. Duis aute irure dolor in repreh enderit in
-                                        voluptate velit esse cillum dolore eu fugiat nulla pariatur
-                                        sint occaecat.</p>
-                                </div>
-                            </div>
-                            <div class="slide-item">
-                                <div class="left-side">
-                                    <div class="image-box">
-                                        <figure>
-                                            <a href="#"><img src="images/testimonials/1.jpg"
-                                                    alt=""></a>
-                                        </figure>
-                                    </div>
-                                    <h5>DATE</h5>
-                                </div>
-                                <div class="right-side comment">
-                                    <a href=#>
-                                        <h4>Event Name</h4>
-                                    </a>
-                                    <ul>
-                                        <li><i class="fa fa-clock-o" aria-hidden="true"></i>Time
-                                        </li>
-                                        <li><i class="fa fa-map-marker"
-                                                aria-hidden="true"></i>Location</li>
-                                    </ul>
-                                    <p>Commodo consequat. Duis aute irure dolor in repreh enderit in
-                                        voluptate velit esse cillum dolore eu fugiat nulla pariatur
-                                        sint occaecat.</p>
-                                </div>
-                            </div>
+                        <div id="events-slide" class="events-slide">
                         </div>
                         <div class="slider-pager">
                             <ul class="nav-link list-inline">
@@ -387,19 +272,161 @@
             class="icon fa fa-long-arrow-up"></span></div>
 
 
-    <script src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+    <!--script src="js/jquery.js"></script-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="js/jquery.bxslider.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
+    <!--script src="js/bootstrap.min.js"></script-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.1/mixitup.min.js"></script>
+    
     <!-- gmap helper -->
     <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHzPSV2jshbjI8fqnC_C4L08ffnj5EN3A"></script>
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDd9mg5blcxDthtRIGYiPaZCfCRgObEmI"></script>
     <!--gmap script-->
     <script src="js/gmaps.js"></script>
-    <script src="js/map-helper.js"></script>
+    <script>
+        var API_KEY= "AIzaSyAHzPSV2jshbjI8fqnC_C4L08ffnj5EN3A";
+        var API_KEY_PRO = "AIzaSyCDd9mg5blcxDthtRIGYiPaZCfCRgObEmI";
+        var map;
+        var latme;
+        var lngme;
+        $(document).ready(function() {
+            
+
+            GMaps.geolocate({
+            success: function(position) {
+               latme = position.coords.latitude;
+               lngme = position.coords.longitude;
+               map = new GMaps({
+                div: '#contact-google-map',
+                zoom: 11,
+                lat: 39.910095,
+                lng: -76.814430
+                // lat: latme,
+                // lng: lngme
+                });
+            },
+                error: function(error) {
+                alert('Geolocation failed: '+error.message);
+            },
+                not_supported: function() {
+                //alert("Your browser does not support geolocation");
+            },
+                always: function() {
+                    //alert("Done!");
+                }
+            });
+                      
+            $("#contact-google-map").css("height", "500px");
+            printMap();
+            printEvent();
+        });
+
+        function getCoordinates(charityName,address,url){
+            fetch("https://maps.googleapis.com/maps/api/geocode/json?address="+address+'&key='+API_KEY_PRO)
+            .then(response => response.json())
+            .then(data => {
+                const latitude = data.results[0].geometry.location.lat;
+                const longitude = data.results[0].geometry.location.lng;
+                console.log({latitude, longitude});
+                map.addMarker({
+                    lat: latitude,
+                    lng: longitude,
+                    title: charityName,
+                    click: function(e) {
+                        window.open(url,'_blank');
+                    }
+                });
+            });
+        }
+
+        function printEvent(){
+            const  zip = '17408';
+            const token = 'LTV5SOWTS6QBZF72VGDA';
+            const mileage = '20';
+            let queryURL = 'https://www.eventbriteapi.com/v3/events/search/?location.address='+zip +'&location.within=' +mileage +'mi&categories=111&token=' +token;
+            $.ajax({
+                url: queryURL,
+                method: 'GET'
+            }).then(function (response) {
+                // Log the resulting object
+                let results = response.events
+                console.log("results "+results);
+                // extracting data for each event to push into cards
+                for (var i = 0; i < results.length; i++) {
+                let name = results[i].name.text
+                let description = results[i].description.text
+                let url = results[i].url
+                let date = new Date(results[i].start.local);
+                let location = results[i].start.timezone;
+                var todayDate = date.toISOString().slice(0,10);
+                var time = date.toTimeString().split(' ')[0];
+                var text = '<div class="slide-item"><div class="left-side"><div class="image-box"><figure><a href="" ><img src="images/asfalt-light.png" alt=""></a></figure></div><h5>'+todayDate+'</h5></div><div class="right-side comment"><a href='+url+' target="_blank"><h4>'+name+'</h4></a><ul><li><i class="fa fa-clock-o" aria-hidden="true"></i>'+time+'</li><li><i class="fa fa-map-marker" aria-hidden="true"></i>'+location+'</li></ul><p>'+description+'</p></div></div>';
+                $("#events-slide").append(text);
+
+                }
+                if($('.events-slide').length){
+                    var slider = $('.events-slide').bxSlider({
+                        auto:true,
+                        mode:'vertical',
+                        nextText: '<i class="fa fa-angle-right"></i>',
+                        prevText: '<i class="fa fa-angle-left"></i>',
+                        maxSlides: 3,
+                        minSlides: 3,
+                        moveSlides: 1,
+                        pause: 5000,
+                        speed: 700,
+                        pagerCustom: '.events-section .slider-pager .thumb-box'
+                    });
+                    $('#slider-next').click(function(){
+                        slider.goToNextSlide();
+                        return false;
+                    });
+                    $('#slider-prev').click(function(){
+                        slider.goToPrevSlide();
+                        return false;
+                    });
+	            }  
+            })
+
+        }
+
+
+        function printMap(){
+            const key = '6e6269f3d39bb81c4b37878dfaaef2f6';
+            const id = 'aa69566f';
+            var  zip = '17408';
+            let queryURL ='https://api.data.charitynavigator.org/v2/Organizations?app_id=' +id +'&app_key=' + key +'&pageSize=15&zip=' +zip;
+            var count = 0;
+            $.ajax({
+                url: queryURL,
+                method: 'GET'
+            }).then(function (response) {
+                for (let i = 0; i < response.length; i++) {       
+                    let charityName = response[i].charityName
+                    let charityCity = response[i].mailingAddress.city
+                    let charityAddress = response[i].mailingAddress.streetAddress1
+                    let charityUrl = response[i].charityNavigatorURL
+                    let charityFocus = response[i].irsClassification.nteeType
+
+                    let charityNextLine = response[i].irsClassification.classification
+                    let charityAbout = response[i].irsClassification.affiliation
+                    let zip = response[i].mailingAddress.postalCode.split("-");
+                    let address = charityAddress+", "+zip[0]+", "+charityCity
+                    if(count<3){
+                        var text = '<div class="image-column col-md-4 col-sm-6 col-xs-12"><div class="image-holder"><div class="image-content"><h5>'+charityName+'<br>'+charityNextLine+'</h5><p>'+charityAbout+'</p><div class="link-btn"><a href="'+charityUrl+'" target="_blank" class="btn-style-three">More Info</a></div></div></div></div>';
+                        $("#charity").append(text);
+                        getCoordinates(charityName,address,charityUrl);
+                    }
+                    
+                    count++;
+                }
+            })
+
+        }
+    </script>
     <script src="js/script.js"></script>
+    <script src="js/map-helper.js"></script>
     <script src="js/googlemaps.js"></script>
 </body>
 
