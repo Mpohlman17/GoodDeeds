@@ -38,7 +38,9 @@ $('#searchBtn').on('click', function (event) {
             'Description: ' + description
           )
 
-          let eventLink = $('<a>').text('Tickets and Additional Details')
+          let eventLink = $('<a target="_blank">').text(
+            'Tickets and Additional Details'
+          )
 
           eventLink.attr('href', url)
 
@@ -47,8 +49,6 @@ $('#searchBtn').on('click', function (event) {
 
           $('#deed-info').prepend(infoCard)
         }
-        
-        
       })
   } else if (searchOption === 'Local Charities') {
     // charit search function
@@ -88,7 +88,7 @@ $('#searchBtn').on('click', function (event) {
           let charityPlace = $("<p class='card-text'>").text(
             'Address: ' + charityAddress
           )
-          let charityLink = $('<a>').text('Additional Details')
+          let charityLink = $('<a target="_blank">').text('Additional Details')
 
           charityLink.attr('href', charityUrl)
 
