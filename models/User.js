@@ -9,7 +9,7 @@ var UserSchema = new Schema({
   // `name` must be unique and of type String
   email: {
     type: String,
-    unique: true  
+    unique: true
   },
   // `notes` is an array that stores ObjectIds
   // The ref property links these ObjectIds to the Note model
