@@ -111,11 +111,16 @@ function printResult(listRandom){
   for(let i = 0; i < listRandom.length; i++){
           if(cont==6){
             cont=0;
-            final = final.concat('<div class="testimonial row">').concat(text).concat('</div>');
-            text = text.concat('<div class="image-column col-md-4 col-sm-6 col-xs-12"><div class="image-holder"><div class="image-content"><h5>'+listRandom[i].charityName +'</h5></a><p>'+listRandom[i].charityNextLine +'</p><div class="link-btn"><a href="'+listRandom[i].charityUrl +'" class="btn-style-three" target="_blank">MORE INFO</a></div></div></div></div>');  
+            text= text.concat('</div>');
+            final = final.concat('<div class="testimonial">').concat(text).concat('</div>');
+            text = text.concat('<div class="image-column col-md-4 col-sm-6 col-xs-12"><div class="image-holder"><div class="image-content"><h5>'+listRandom[i].charityName +'</h5></a><p>'+listRandom[i].charityNextLine +'</p><div class="link-btn"><a href="'+listRandom[i].charityUrl +'" class="btn-style-three" target="_blank">MORE INFO</a></div><div class="link-btn"><a href="" class="btn-style-three">SAVE</a></div></div></div></div>');  
             text="";
-          }else{              
-            text = text.concat('<div class="image-column col-md-4 col-sm-6 col-xs-12"><div class="image-holder"><div class="image-content"><h5>'+listRandom[i].charityName +'</h5></a><p>'+listRandom[i].charityNextLine +'</p><div class="link-btn"><a href="'+listRandom[i].charityUrl +'" class="btn-style-three" target="_blank">MORE INFO</a></div></div></div></div>');  
+          } if(cont==3){
+            text= ('<div class="row">').concat(text).concat('</div><div class="row">');
+            text = text.concat('<div class="image-column col-md-4 col-sm-6 col-xs-12"><div class="image-holder"><div class="image-content"><h5>'+listRandom[i].charityName +'</h5></a><p>'+listRandom[i].charityNextLine +'</p><div class="link-btn"><a href="'+listRandom[i].charityUrl +'" class="btn-style-three" target="_blank">MORE INFO</a></div><div class="link-btn"><a href="" class="btn-style-three">SAVE</a></div></div></div></div>');  
+            cont++;
+          } else{              
+            text = text.concat('<div class="image-column col-md-4 col-sm-6 col-xs-12"><div class="image-holder"><div class="image-content"><h5>'+listRandom[i].charityName +'</h5></a><p>'+listRandom[i].charityNextLine +'</p><div class="link-btn"><a href="'+listRandom[i].charityUrl +'" class="btn-style-three" target="_blank">MORE INFO</a></div><div class="link-btn"><a href="" class="btn-style-three">SAVE</a></div></div></div></div>');  
             cont++;
           }
           if(listRandom[i].address == null){
@@ -147,7 +152,7 @@ function printResult(listRandom){
           }
           count++;
   }
-  final = final.concat('<div class="testimonial row">').concat(text).concat('</div>');
+  final = final.concat('<div class="testimonial"><div class="row">').concat(text).concat('</div></div>');
   $('.testimonials').append(final);
   if(sliderInstance != undefined){
     sliderInstance.reloadSlider();
