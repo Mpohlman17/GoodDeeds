@@ -403,7 +403,7 @@
                 let description = results[i].description.text
                 let url = results[i].url
                 let date = new Date(results[i].start.local);
-                let location = results[i].venue.address.postal_code +" - "+results[i].venue.address.country;
+                let location = results[i].venue.address.localized_address_display +" - "+results[i].venue.address.country;
                 let latitude = results[i].venue.address.latitude;
                 let longitude = results[i].venue.address.longitude;
                 map_event.addMarker({
