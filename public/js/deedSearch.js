@@ -1,21 +1,26 @@
+var map_search;
+var dataCharity = function () {
+  this.charityName = null;
+  this.charityNextLine = null;
+  this.charityAbout = null;
+  this.charityUrl = null;
+  this.address = null;
+};
+var listRandom = [];
+var sliderInstance;
+
 // gets information for API search from page
 $('#searchBtn').on('click', function (event) {
   event.preventDefault()
   let zip = $('#zipCodeInput').val()
   let mileage = $('#mileageInput').val()
   // clears data input from API's
-  ClearFields()
+  //ClearFields()
   let searchOption = $('#selectorDropdown').val()
   if (searchOption === 'Charity Events') {
     // event search function
     const token = 'LTV5SOWTS6QBZF72VGDA'
-    let queryURL =
-      'https://www.eventbriteapi.com/v3/events/search/?location.address=' +
-      zip +
-      '&location.within=' +
-      mileage +
-      'mi&categories=111&token=' +
-      token
+    let queryURL ='https://www.eventbriteapi.com/v3/events/search/?location.address=' + zip +'&location.within=' +mileage +'mi&expand=venue&categories=111&token=' +token
 
     $.ajax({
       url: queryURL,
@@ -24,31 +29,32 @@ $('#searchBtn').on('click', function (event) {
       // We store all of the retrieved data inside of an object called "response"
       .then(function (response) {
         // Log the resulting object
+        $('.testimonials').html("");
+        listRandom = [];
         let results = response.events
+        map_search.removeMarkers();
+        console.log("resultado "+results);
         // extracting data for each event to push into cards
         for (var i = 0; i < results.length; i++) {
           let name = results[i].name.text
           let description = results[i].description.text
+          if(description.length > 300){
+            description = description.substr(0,300);
+          }
           let url = results[i].url
-          // let showMore = "<div class='show-more'><a href='#'>Show more</a></div>"
-          let infoCard = $("<div class ='card'>")
-          let eventName = $("<div class='card-header'>").text(name)
-          let infoCardBody = $("<div class='card-body'>")
-          let eventDescription = $("<p class='card-text hideContent'>").text(
-            'Description: ' + description
-          )
-
-          let eventLink = $('<a target="_blank">').text(
-            'Tickets and Additional Details'
-          )
-
-          eventLink.attr('href', url)
-
-          infoCard.append(eventName, infoCardBody)
-          infoCardBody.append(eventDescription, eventLink)
-
-          $('#deed-info').prepend(infoCard)
+          let latitude = results[i].venue.latitude
+          let longitude = results[i].venue.longitude
+          var datacharity = new dataCharity();
+          datacharity.charityName = name.trim();
+          datacharity.charityNextLine = description.trim();
+          datacharity.charityUrl = url;
+          datacharity.latitude = latitude;
+          datacharity.longitude = longitude;
+          //datacharity.charityAbout = charityAbout;
+          datacharity.address = null;
+          listRandom.push(datacharity);  
         }
+        printResult(listRandom);
       })
   } else if (searchOption === 'Local Charities') {
     // charit search function
@@ -68,46 +74,138 @@ $('#searchBtn').on('click', function (event) {
     })
       // We store all of the retrieved data inside of an object called "response"
       .then(function (response) {
+        //console.log("response "+response);
+        $('.testimonials').html("");
+        listRandom = [];
         for (let i = 0; i < response.length; i++) {
           let charityName = response[i].charityName
           let charityCity = response[i].mailingAddress.city
           let charityAddress = response[i].mailingAddress.streetAddress1
           let charityUrl = response[i].charityNavigatorURL
           let charityFocus = response[i].irsClassification.nteeType
-          let infoCard = $("<div class ='card'>")
-          let eName = $("<div class='card-header'>").text(charityName)
-          let infoCardBody = $("<div class='card-body'>")
-
-          let charityFunction = $("<p class='card-text'>").text(
-            'Cause:' + charityFocus
-          )
-
-          let charityLocale = $("<p class='card-text'>").text(
-            'City: ' + charityCity
-          )
-          let charityPlace = $("<p class='card-text'>").text(
-            'Address: ' + charityAddress
-          )
-          let charityLink = $('<a target="_blank">').text('Additional Details')
-
-          charityLink.attr('href', charityUrl)
-
-          infoCard.append(eName, infoCardBody)
-          infoCardBody.append(
-            charityFunction,
-            charityLocale,
-            charityPlace,
-            charityLink
-          )
-
-          $('#deed-info').prepend(infoCard)
+          if(charityFocus==null){
+            charityFocus = "";
+          }
+          let zip = response[i].mailingAddress.postalCode.split("-");
+          let address = charityAddress+", "+zip[0]+", "+charityCity;
+          var datacharity = new dataCharity();
+          datacharity.charityName = charityName.trim();
+          datacharity.charityNextLine = charityFocus;
+          datacharity.charityUrl = charityUrl;
+          //datacharity.charityAbout = charityAbout;
+          datacharity.address = address;
+          listRandom.push(datacharity);  
         }
+        printResult(listRandom);
       })
   } else {
     alert('Please select charity or event from dropdown! :D')
   }
 })
 
-function ClearFields () {
-  document.getElementById('deed-info').innerHTML = ''
+function printResult(listRandom){
+  var text = "";
+  var cont = 0;
+  var count = 0;
+  var final = "";
+  for(let i = 0; i < listRandom.length; i++){
+          if(cont==6){
+            cont=0;
+            final = final.concat('<div class="testimonial row">').concat(text).concat('</div>');
+            text = text.concat('<div class="image-column col-md-4 col-sm-6 col-xs-12"><div class="image-holder"><div class="image-content"><h5>'+listRandom[i].charityName +'</h5></a><p>'+listRandom[i].charityNextLine +'</p><div class="link-btn"><a href="'+listRandom[i].charityUrl +'" class="btn-style-three" target="_blank">MORE INFO</a></div></div></div></div>');  
+            text="";
+          }else{              
+            text = text.concat('<div class="image-column col-md-4 col-sm-6 col-xs-12"><div class="image-holder"><div class="image-content"><h5>'+listRandom[i].charityName +'</h5></a><p>'+listRandom[i].charityNextLine +'</p><div class="link-btn"><a href="'+listRandom[i].charityUrl +'" class="btn-style-three" target="_blank">MORE INFO</a></div></div></div></div>');  
+            cont++;
+          }
+          if(listRandom[i].address == null){
+            if(count == 0){
+              map_search.setCenter(listRandom[i].latitude, listRandom[i].longitude);
+              map_search.addMarker({
+                lat:  listRandom[i].latitude,
+                lng:  listRandom[i].longitude,
+                title: listRandom[i].charityName,
+                click: function(e) {
+                    window.open(listRandom[i].charityUrl,'_blank');
+                }
+              });
+              
+            }else{
+              map_search.addMarker({
+                lat:  listRandom[i].latitude,
+                lng:  listRandom[i].longitude,
+                title: listRandom[i].charityName,
+                click: function(e) {
+                    window.open(listRandom[i].charityUrl,'_blank');
+                }
+              });
+            }
+  
+            
+          }else{
+            getCoordinates(listRandom[i].charityName,listRandom[i].address,listRandom[i].charityUrl,count)  
+          }
+          count++;
+  }
+  final = final.concat('<div class="testimonial row">').concat(text).concat('</div>');
+  $('.testimonials').append(final);
+  if(sliderInstance != undefined){
+    sliderInstance.reloadSlider();
+  }else{
+    sliderInstance = $('.testimonials').bxSlider({
+      auto: false,
+      pause: 8000, //time on each review
+      mode: 'fade', // or slide
+      infiniteLoop: false,
+      controls: false, // true for arrows
+      slideMargin: 2
+    });
+  }
+  
 }
+
+function getCoordinates(charityName,address,url,count){
+  let queryURL ='https://maps.googleapis.com/maps/api/geocode/json?address=' +address +'&key='+'AIzaSyCDd9mg5blcxDthtRIGYiPaZCfCRgObEmI';
+  $.ajax({
+      url: queryURL,
+      method: 'GET'
+  }).then(function (response) {
+      var latitude = response.results[0].geometry.location.lat;
+      var longitude = response.results[0].geometry.location.lng;
+      if(count==0){
+        map_search.setCenter(latitude, longitude);  
+      }
+      map_search.addMarker({
+          lat: latitude,
+          lng: longitude,
+          title: charityName,
+          click: function(e) {
+              window.open(url,'_blank');
+          }
+      });
+  })
+}
+
+$(document).ready(function(){
+  GMaps.geolocate({
+    success: function(position) {
+       latme = position.coords.latitude;
+       lngme = position.coords.longitude;
+       map_search = new GMaps({
+            div: '#map-search',
+            zoom: 11,
+            lat: latme,
+            lng: lngme
+       });
+    },
+        error: function(error) {
+        alert('Geolocation failed: '+error.message);
+    },
+        not_supported: function() {
+    },
+        always: function() {
+            //alert("Done!");
+        }
+    });
+    $("#map-search").css("height", "400px");
+});
