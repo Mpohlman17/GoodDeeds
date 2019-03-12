@@ -1,51 +1,50 @@
 var db = require("../models");
-var passport = require("../config/passport");
+// var passport = require("../config/passport");
 
 module.exports = function(app) {
   // Get all examples
-  app.post("/api/login", passport.authenticate("local"), function(req, res) {
-    res.json("/profile");
-  });
-
-  // Create a new user
-  app.post("/api/signup", function(req, res) {
-    console.log(req.body);
-    db.User.create({
-      email: req.body.email,
-      password: req.body.password
-    })
-      .then(function() {
-        res.redirect(307, "/login");
-      })
-      .catch(function(err) {
-        console.log(err);
-        res.json(err);
-      });
-  });
-
-  //Route for logging user out
-  app.get("/logout", function(req, res) {
-    req.logout();
-    res.redirect("/login");
-  });
-
-  // Route for getting user data to be used client side
-  app.get("/api/user_data", function(req, res) {
-    if (!req.user) {
-      res.json({});
-    } else {
-      res.json({
-        email: req.user.email,
-        id: req.user.id
-      });
-    }
-  });
-  // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(
-      dbExample
-    ) {
-      res.json(dbExample);
+  app.get("/api/data/:id", function(req, res) {
+    // Here we add an "include" property to our options in our findOne query
+    // We set the value to an array of the models we want to include in a left outer join
+    // In this case, just db.Author
+    db.Data.findOne({
+      where: {
+        id: req.params.id
+      },
+      include: [db.User]
+    }).then(function(dbData) {
+      res.json(dbData);
     });
   });
+
+  // POST route for saving a new post
+  app.post("/api/Data", function(req, res) {
+    db.Data.create(req.body).then(function(dbData) {
+      res.json(dbData);
+    });
+  });
+
+  // DELETE route for deleting posts
+  app.delete("/api/posts/:id", function(req, res) {
+    db.Data.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbData) {
+      res.json(dbData);
+    });
+  });
+
+  // PUT route for updating posts
+  app.put("/api/posts", function(req, res) {
+    db.Data.update(req.body, {
+      where: {
+        id: req.body.id
+      }
+    }).then(function(dbData) {
+      res.json(dbData);
+    });
+  });
+};
+
 };
