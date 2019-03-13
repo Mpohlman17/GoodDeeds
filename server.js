@@ -36,26 +36,26 @@ mongoose.connect(
 )
 
 // Routes
-// require('./routes/apiRoutes')(app)
+require('./routes/apiRoutes')(app)
 require('./routes/htmlRoutes')(app)
 
-// var syncOptions = {
-//   force: false
-// }
+
+// var syncOptions = { force: false };
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
-// if (process.env.NODE_ENV === 'test') {
-//   syncOptions.force = true
-// }
+// if (process.env.NODE_ENV === "development") {
+//   syncOptions.force = true;
 
-// Starting the server
-app.listen(PORT, function () {
-  console.log(
-    '==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.',
-    PORT,
-    PORT
-  )
-})
 
-module.exports = app
+
+  app.listen(PORT, function() {
+    console.log(
+      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
+      PORT,
+      PORT
+    );
+  });
+
+
+module.exports = app;
