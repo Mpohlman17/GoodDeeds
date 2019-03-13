@@ -29,8 +29,13 @@ module.exports = function (app) {
   })
 
   // loads search page
-  app.get('/user/:user.id', function (req, res) {
+  app.get('/search', function (req, res) {
     res.sendFile(path.join(__dirname, '../public/search.html'))
+  })
+
+  // loads search page
+  app.get('/user/:user.id', function (req, res) {
+    res.sendFile(path.join(__dirname, '../public/user.html'))
   })
 
   // loads 404 on any unconnect Url
