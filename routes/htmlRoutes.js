@@ -2,13 +2,13 @@ var db = require("../models");
 var breweryzip = require("../routes/BreweryZip");
 var zipcodes = require("zipcodes");
 
-module.exports = function (app) {
+module.exports = function(app) {
   // Load index page
-  app.get("/", function (req, res) {
+  app.get("/", function(req, res) {
     res.render("index");
   });
 
-  app.post("/search", function (req, res) {
+  app.post("/search", function(req, res) {
     var breweriesArray = [];
     var certified = req.body.certified;
     console.log("value" + certified);
@@ -24,7 +24,7 @@ module.exports = function (app) {
       testRadius,
       breweriesArray,
       certified,
-      function (data, err) {
+      function(data, err) {
         if (!err) {
           //console.log("resultado "+JSON.stringify(data));
           res.render("explore-sidebar-map", {
@@ -41,7 +41,7 @@ module.exports = function (app) {
     );
   });
 
-  app.post("/detail", function (req, res) {
+  app.post("/detail", function(req, res) {
     var name_brewery = req.body.name_brewery;
     var address_brewery = req.body.address_brewery;
     var overview_brewery = req.body.overview_brewery;
@@ -81,7 +81,7 @@ module.exports = function (app) {
     });
   });
   // Render 404 page for any unmatched routes
-  app.get("*", function (req, res) {
+  app.get("*", function(req, res) {
     res.render("404");
   });
 };
