@@ -1,3 +1,4 @@
+
 /*charity-2 HTML Template */
 
 
@@ -3077,7 +3078,6 @@ ul,li{
 
 .contact-section h3{
 	position: relative;
-	background: url(../images/resource/bd.png) no-repeat scroll left bottom;
 	padding-bottom: 15px;
 	margin-bottom: 20px;
 	font-size: 26px;
@@ -3123,6 +3123,11 @@ ul,li{
 }
 
 #contact-google-map {
+  height: 440px;
+  width: 100%;
+}
+
+#contact-google-map2 {
   height: 440px;
   width: 100%;
 }

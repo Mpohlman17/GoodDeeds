@@ -3,10 +3,9 @@
 
 <head>
     <meta charset="utf-8">
-    <title>User Page</title>
+    <title>Good Deeds</title>
     <!-- Stylesheets -->
     <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/revolution-slider.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <!--Favicon-->
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
@@ -16,16 +15,18 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <link href="css/responsive.css" rel="stylesheet">
-    <link href="css/userpage.css" rel="stylesheet">
 </head>
 
 
 <body>
     <div class="page-wrapper">
         <!-- Preloader -->
+
+
         <!-- .preloader -->
         <div class="preloader"></div>
         <!-- /.preloader -->
+
         <!-- Main Header-->
         <header class="main-header">
             <div class="header-top">
@@ -104,131 +105,61 @@
         </header>
         <!--End Main Header -->
 
-
-        <!--Page Title-->
-        <section class="explore">
-            <div class="explore__map-side">
-                <!-- map block -->
-                <div id="map" data-map-zoom="9">
-                    <br>
-                    <br>
-                    <div class="sec-title text-center">
-                        <h3>USERNAME'S<span> page</span></h3>
-                        <p></p>
-                    </div>
-                    <img src="images/background/sample_map.png" alt="map">
-                </div>
-                <!-- End map block -->
-            </div>
-        </section>
-        <!--End Page Title-->
-
-
-        <!--couses-section-->
-        <section class="couses-section">
+        <section class="contact-section">
             <div class="container">
-                <div class="sec-title text-center">
-                    <h3>YOUR<span>favorite charities</span></h3>
-                </div>
-                <br>
                 <div class="row">
-
-                    <div class="image-column col-md-4 col-sm-6 col-xs-12 ">
-                        <div class="image-holder">
-                            <div class="image-content charity-info-box-colored">
-                                <a href="#">
-                                    <h5>Charity Name </h5>
-                                    <h6>Charity address</h6>
-                                </a>
-                                <p>Some info about your charity. Blah, blah, blah.</p>
-                                <hr class="style10">
-                                <h6>CHARITY ACTIVITIES</h6>
-                                <p>Charity activities & events in the near future.</p>
-                            </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="sec-title">
+                            <h3>Send <span>Message</span></h3>
+                        </div>
+                        <div class="default-form-area">
+                            <form id="contact-form" name="contact_form" class="default-form"
+                                action="inc/sendmail.php" method="post" novalidate="novalidate">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-12 col-xs-12">
+                                        <div class="form-group">
+                                            <input type="text" placeholder="Name">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" placeholder="email">
+                                        </div>
+                                        <div class="form-group">
+                                            <input id="form_botcheck" name="form_botcheck"
+                                                class="form-control" type="hidden" value="">
+                                            <button class="btn-style-two" type="submit"
+                                                data-loading-text="Please wait...">send
+                                                message</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-12 col-xs-12">
+                                        <div class="form-group">
+                                            <textarea placeholder="message"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
-
-                    <div class="image-column col-md-4 col-sm-6 col-xs-12 ">
-                        <div class="image-holder">
-                            <div class="image-content">
-                                <a href="#">
-                                    <h5>Charity Name </h5>
-                                    <h6>Charity address</h6>
-                                </a>
-                                <p>Some info about your charity. Blah, blah, blah.</p>
-                                <hr class="style10">
-                                <h6>CHARITY ACTIVITIES</h6>
-                                <p>Charity activities & events in the near future.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="image-column col-md-4 col-sm-6 col-xs-12 ">
-                        <div class="image-holder">
-                            <div class="image-content charity-info-box-colored">
-                                <a href="#">
-                                    <h5>Charity Name </h5>
-                                    <h6>Charity address</h6>
-                                </a>
-                                <p>Some info about your charity. Blah, blah, blah.</p>
-                                <hr class="style10">
-                                <h6>CHARITY ACTIVITIES</h6>
-                                <p>Charity activities & events in the near future.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="image-column col-md-4 col-sm-6 col-xs-12 ">
-                        <div class="image-holder">
-                            <div class="image-content">
-                                <a href="#">
-                                    <h5>Charity Name </h5>
-                                    <h6>Charity address</h6>
-                                </a>
-                                <p>Some info about your charity. Blah, blah, blah.</p>
-                                <hr class="style10">
-                                <h6>CHARITY ACTIVITIES</h6>
-                                <p>Charity activities & events in the near future.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="image-column col-md-4 col-sm-6 col-xs-12 ">
-                        <div class="image-holder">
-                            <div class="image-content charity-info-box-colored">
-                                <a href="#">
-                                    <h5>Charity Name </h5>
-                                    <h6>Charity address</h6>
-                                </a>
-                                <p>Some info about your charity. Blah, blah, blah.</p>
-                                <hr class="style10">
-                                <h6>CHARITY ACTIVITIES</h6>
-                                <p>Charity activities & events in the near future.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="image-column col-md-4 col-sm-6 col-xs-12 ">
-                        <div class="image-holder">
-                            <div class="image-content">
-                                <a href="#">
-                                    <h5>Charity Name </h5>
-                                    <h6>Charity address</h6>
-                                </a>
-                                <p>Some info about your charity. Blah, blah, blah.</p>
-                                <hr class="style10">
-                                <h6>CHARITY ACTIVITIES</h6>
-                                <p>Charity activities & events in the near future.</p>
-                            </div>
-                        </div>
-                    </div>
-
-
                 </div>
             </div>
         </section>
-        <!--End couses-section-->
 
+
+        <!--Start Google map area-->
+        <section class="google-map-area">
+            <div class="container">
+                <div class="google-map" id="contact-google-map" data-map-lat="44.799511"
+                    data-map-lng="-106.951309" data-icon-path="images/resource/map-marker.png"
+                    data-map-title="Sheridan School Special Education" data-map-zoom="12"
+                    data-markers='{
+                    "marker-1": [44.799511, -106.951309, "<h4>Sheridan School Special Education</h4><p>201 N Connor St Sheridan, WY 82801</p>","images/resource/map-marker.png"]
+                }'>
+
+                </div>
+            </div>
+
+        </section>
+        <!--End Google map area-->
 
         <!--Main Footer-->
         <footer class="main-footer">
@@ -252,7 +183,6 @@
         </footer>
         <!--Main Footer-->
 
-
     </div>
     <!--End pagewrapper-->
 
@@ -261,12 +191,19 @@
             class="icon fa fa-long-arrow-up"></span></div>
 
 
+
     <script src="js/jquery.js"></script>
     <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
     <script src="js/jquery.bxslider.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/bootstrap-select.min.js"></script>
     <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
+    <!-- gmap helper -->
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHzPSV2jshbjI8fqnC_C4L08ffnj5EN3A"></script>
+    <!--gmap script-->
+    <script src="js/gmaps.js"></script>
+    <script src="js/map-helper.js"></script>
     <script src="js/script.js"></script>
 </body>
 

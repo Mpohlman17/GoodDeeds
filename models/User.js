@@ -1,46 +1,31 @@
-// Requiring bcrypt for password hashing. Using the bcrypt-nodejs version as the regular bcrypt module
-// sometimes causes errors on Windows machines
-var bcrypt = require("bcrypt-nodejs");
+var mongoose = require("mongoose");
 
-module.exports = function(sequelize, DataTypes) {
-  var User = sequelize.define("User", {
-    email: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique: true,
-      validate: {
-        isEmail: true
-      }
-    },
-    password: {
-      type: DataTypes.TEXT,
-      allowNull: false,
-      validate: {
-        len: [1],
-        notEmpty: true
-      }
+// Save a reference to the Schema constructor
+var Schema = mongoose.Schema;
+
+// Using the Schema constructor, create a new UserSchema object
+// This is similar to a Sequelize model
+var UserSchema = new Schema({
+  // `name` must be unique and of type String
+  email: {
+    type: String,
+    unique: true
+  },
+  // `notes` is an array that stores ObjectIds
+  // The ref property links these ObjectIds to the Note model
+  // This allows us to populate the User with any associated Notes
+  data: [
+    {
+      // Store ObjectIds in the array
+      type: Schema.Types.ObjectId,
+      // The ObjectIds will refer to the ids in the Note model
+      ref: "Data"
     }
-  });
+  ]
+});
 
-  // Creating a custom method for our User model. This will check if an unhashed password entered by the user can be compared to the hashed password stored in our database
-  User.prototype.validPassword = function(password) {
-    return bcrypt.compareSync(password, this.password);
-  };
-  // Hooks are automatic methods that run during various phases of the User Model lifecycle
-  // In this case, before a User is created, we will automatically hash their password
-  User.hook("beforeCreate", function(user) {
-    user.password = bcrypt.hashSync(
-      user.password,
-      bcrypt.genSaltSync(10),
-      null
-    );
-  });
+// This creates our model from the above schema, using mongoose's model method
+var User = mongoose.model("User", UserSchema);
 
-  // User.associate = function(models) {
-  //   User.belongsToMany(models.Brewery, {
-  //     through: "UserBrewery"
-  //   });
-  // };
-
-  return User;
-};
+// Export the User model
+module.exports = User;
