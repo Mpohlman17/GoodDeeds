@@ -24,7 +24,7 @@ module.exports = function (app) {
 
   // loads contact page
   app.get('/contact', function (req, res) {
-    res.sendFile(path.join(__dirname, '../public/about.html'))
+    res.sendFile(path.join(__dirname, '../public/contact.html'))
   })
 
   // loads search page
