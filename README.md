@@ -61,3 +61,5 @@ Many of us are not aware of what charities are in our area, and what events they
 - Fully built app through heroku deployment
 - Creation of categories (i.e children support, religious, disaster relief) and suggestions based on previous Good Deeds of the user for future Good Deeds.
 - Full app built in React.
+
+## Website will be gifted to a caring cause that supports our Good Deeds Values
