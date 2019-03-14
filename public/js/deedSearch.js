@@ -1,11 +1,4 @@
 var map_search
-var dataCharity = function () {
-  this.charityName = null
-  this.charityNextLine = null
-  this.charityAbout = null
-  this.charityUrl = null
-  this.address = null
-}
 var listRandom = []
 var sliderInstance
 
@@ -129,7 +122,7 @@ function printResult (listRandom) {
           listRandom[i].charityNextLine +
           '</p><div class="link-btn"><a href="' +
           listRandom[i].charityUrl +
-          '" class="btn-style-three" id="url" target="_blank">MORE INFO</a></div><div class="link-btn"><a id="SaveButton" class="btn-style-three">SAVE</a></div></div></div></div>'
+          '" class="btn-style-three" id="url" target="_blank">MORE INFO</a></div><div class="savebutton link-btn" data-x="'+listRandom[i].charityName+'" data-y="'+listRandom[i].charityNextLine+'" data-z="'+listRandom[i].charityUrl+'"><a   class="btn-style-three" >SAVE</a></div></div></div></div>'
       )
       text = ''
     }
@@ -142,7 +135,7 @@ function printResult (listRandom) {
           listRandom[i].charityNextLine +
           '</p><div class="link-btn"><a href="' +
           listRandom[i].charityUrl +
-          '" class="btn-style-three" id="url" target="_blank">MORE INFO</a></div><div class="link-btn"><a id="SaveButton" class="btn-style-three">SAVE</a></div></div></div></div>'
+          '" class="btn-style-three" id="url" target="_blank">MORE INFO</a></div><div class="savebutton link-btn" data-x="'+listRandom[i].charityName+'" data-y="'+listRandom[i].charityNextLine+'" data-z="'+listRandom[i].charityUrl+'"><a   class="btn-style-three">SAVE</a></div></div></div></div>'
       )
       cont++
     } else {
@@ -153,7 +146,7 @@ function printResult (listRandom) {
           listRandom[i].charityNextLine +
           '</p><div class="link-btn"><a href="' +
           listRandom[i].charityUrl +
-          '" class="btn-style-three" id="url" target="_blank">MORE INFO</a></div><div class="link-btn"><a id="SaveButton" class="btn-style-three">SAVE</a></div></div></div></div>'
+          '" class="btn-style-three" id="url" target="_blank">MORE INFO</a></div><div class="savebutton link-btn" data-x="'+listRandom[i].charityName+'" data-y="'+listRandom[i].charityNextLine+'" data-z="'+listRandom[i].charityUrl+'"><a   class="btn-style-three">SAVE</a></div></div></div></div>'
       )
       cont++
     }
@@ -207,6 +200,9 @@ function printResult (listRandom) {
   }
 }
 
+
+
+
 function getCoordinates (charityName, address, url, count) {
   let queryURL =
     'https://maps.googleapis.com/maps/api/geocode/json?address=' +
@@ -253,5 +249,18 @@ $(document).ready(function () {
       // alert("Done!");
     }
   })
-  $('#map-search').css('height', '400px')
+  $('#map-search').css('height', '400px');
+
+  $(document).on ("click", ".savebutton", function () {
+ 
+    var newPost = {
+      title: $(this).data("x"),
+      description: $(this).data("y"),
+      url: $(this).data("z")
+    }
+    console.log("newPost "+newPost);
+    $.post('/api/data', newPost, function () {});
+  });
+
+
 })
