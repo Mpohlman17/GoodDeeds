@@ -252,23 +252,23 @@ function expertizeRoundCircle () {
 		});
 	}
 
-	//Main BX-Slider
-	/*if($('.events-slide').length){
-		$('.events-slide').bxSlider({
-			auto:true,
-			mode:'vertical',
-			nextSelector: '.events-section #slider-next',
-	        prevSelector: '.events-section #slider-prev',
-	        nextText: '<i class="fa fa-angle-right"></i>',
-	        prevText: '<i class="fa fa-angle-left"></i>',
-			maxSlides: 3,
-			minSlides: 3,
-			moveSlides: 1,
-			pause: 5000,
-			speed: 700,
-			pagerCustom: '.events-section .slider-pager .thumb-box'
-		});
-	}*/
+	// Main BX-Slider
+	// if($('.events-slide').length){
+	// 	$('.events-slide').bxSlider({
+	// 		auto:true,
+	// 		mode:'vertical',
+	// 		nextSelector: '.events-section #slider-next',
+	//         prevSelector: '.events-section #slider-prev',
+	//         nextText: '<i class="fa fa-angle-right"></i>',
+	//         prevText: '<i class="fa fa-angle-left"></i>',
+	// 		maxSlides: 3,
+	// 		minSlides: 3,
+	// 		moveSlides: 1,
+	// 		pause: 5000,
+	// 		speed: 700,
+	// 		pagerCustom: '.events-section .slider-pager .thumb-box'
+	// 	});
+	// }
 	
 	//Contact Form Validation
 	if($('#contact_form').length){
