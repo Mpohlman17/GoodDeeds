@@ -27,7 +27,6 @@
     line-height: 25px;
     font-family: 'Poppins', sans-serif;
     font-weight: 900;
-
 }
 
 #pageNotFound {
@@ -69,4 +68,17 @@ i {
     margin-top: 25px;
     padding-bottom: 25px;
 } 
+
+@media only screen and (max-width: 500px) {
+    
+    #errorOne {
+        font-size: 135px;
+    }
+
+    #errorTwo {
+        font-size: 120px;
+        line-height: 5px;
+
+    }
+  }
 
