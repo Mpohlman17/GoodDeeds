@@ -5,11 +5,11 @@ var sliderInstance;
 // gets information for API search from page
 $("#searchBtn").on("click", function(event) {
   event.preventDefault();
-  let zip = $("#zipCodeInput").val();
-  let mileage = $("#mileageInput").val();
+  var zip = $("#zipCodeInput").val();
+  var mileage = $("#mileageInput").val();
   // clears data input from API's
   // ClearFields()
-  let searchOption = $("#selectorDropdown").val();
+  var searchOption = $("#selectorDropdown").val();
   if (searchOption === "Charity Events") {
     // event search function
     const token = "LTV5SOWTS6QBZF72VGDA";
