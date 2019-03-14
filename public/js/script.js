@@ -336,6 +336,50 @@ function printEvent(latme, lngme) {
 		});
 	}*/
 
+	// Main BX-Slider
+	// if($('.events-slide').length){
+	// 	$('.events-slide').bxSlider({
+	// 		auto:true,
+	// 		mode:'vertical',
+	// 		nextSelector: '.events-section #slider-next',
+	//         prevSelector: '.events-section #slider-prev',
+	//         nextText: '<i class="fa fa-angle-right"></i>',
+	//         prevText: '<i class="fa fa-angle-left"></i>',
+	// 		maxSlides: 3,
+	// 		minSlides: 3,
+	// 		moveSlides: 1,
+	// 		pause: 5000,
+	// 		speed: 700,
+	// 		pagerCustom: '.events-section .slider-pager .thumb-box'
+	// 	});
+	// }
+	
+	//Contact Form Validation
+	if($('#contact_form').length){
+		$("#contact_form").validate({
+		    submitHandler: function(form) {
+		      var form_btn = $(form).find('button[type="submit"]');
+		      var form_result_div = '#form-result';
+		      $(form_result_div).remove();
+		      form_btn.before('<div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div>');
+		      var form_btn_old_msg = form_btn.html();
+		      form_btn.html(form_btn.prop('disabled', true).data("loading-text"));
+		      $(form).ajaxSubmit({
+		        dataType:  'json',
+		        success: function(data) {
+		          if( data.status == 'true' ) {
+		            $(form).find('.form-control').val('');
+		          }
+		          form_btn.prop('disabled', false).html(form_btn_old_msg);
+		          $(form_result_div).html(data.message).fadeIn('slow');
+		          setTimeout(function(){ $(form_result_div).fadeOut('slow') }, 6000);
+		        }
+		      });
+		    }
+		});
+	}
+
+
   //Contact Form Validation
   if ($("#contact_form").length) {
     $("#contact_form").validate({
