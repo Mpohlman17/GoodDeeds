@@ -42,6 +42,12 @@
 - [Twitter Bootstrap CSS framework](http://getbootstrap.com/)
 - [Balance-text](https://www.npmjs.com/package/balance-text)
 - [Google Maps Geo-location](https://developers.google.com/maps/documentation/javascript/examples/map-geolocation)
+- [Axios](https://www.axios.com)
+- [Bcryptjs](https://www.npmjs.com/package/bcryptjs)
+- [Jsonwebtoken](https://jwt.io/)
+- [Mongoose](https://mongoosejs.com/)
+- [React-router-dom](https://www.npmjs.com/package/react-router-dom)
+- [Validator](https://validatejs.org/)
 
 ## Our Mission & Motivation for Development
 
