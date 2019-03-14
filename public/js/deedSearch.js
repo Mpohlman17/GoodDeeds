@@ -102,7 +102,6 @@ $('#searchBtn').on('click', function (event) {
   }
 })
 
-
 function printResult (listRandom) {
   var text = ''
   var cont = 0
@@ -160,8 +159,6 @@ function printResult (listRandom) {
           title: listRandom[i].charityName,
           click: function (e) {
             window.open(listRandom[i].charityUrl, '_blank')
-
-
           }
         })
       } else {
