@@ -69,3 +69,5 @@ Many of us are not aware of what charities are in our area, and what events they
 - Full app built in React.
 
 ## Website will be gifted to a caring cause that supports our Good Deeds Values
+
+## Checkout our [GoodDeeds](https://limitless-harbor-38694.herokuapp.com/) app on Heroku!
