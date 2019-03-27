@@ -25,6 +25,8 @@ The idea for the application came from trying to teach my daughter the importanc
 
 Many of us are not aware of what charities are in our area, and what events they host. GoodDeeds was created to address this as a one-stop app that makes it easier for everyone to find where to donate their time, money, and efforts in helping others and improving their communities.
 
+## Deployed [GoodDeeds](https://limitless-harbor-38694.herokuapp.com/) app on Heroku!
+
 ## <a name="about-this-app"></a> Application Overview
 The application's main page will request for the user to allow geolocation. Once geolocation is allowed the page is divided in 2 sections with 2 maps.  Top section will automatically suggest 3 local charities and map them.  Bottom section will automatically suggest 5 charity events within a 25 mile radius in a carousel style card slider. 
 
