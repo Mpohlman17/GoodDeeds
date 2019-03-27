@@ -2,28 +2,61 @@
 
 ![GoodDeeds](public/images/gooddeedslogo.png)
 
-## Welcome to our Final Project with the University of Pennsylvania LPS Coding [Bootcamp](https://bootcamp.sas.upenn.edu/).
+## Table of contents
+  * [About this project](#about-this-project)
+  * [Application overview](#about-this-app)
+  * [Getting started](#getting-started)
+  * [How to run app](#how-to)
+  * [Demonstrations](#demo)
+    * [Geolocation](#geolocation)
+    * [Main Charity Suggestions](#more-charity)
+    * [Main Page Overview](#scroll)
+    * [Main Charity Events](#charity-events)
+    * [Searching](#searching)
+  * [Technologies used to create app](#technologies-used)
+  * [Future code development](#feature-enhancements)
+  * [Issues](#issues)
+  * [Author](#author)
+
+## <a name="about-this-project"></a> About this project
+Welcome to our Final Project with the University of Pennsylvania LPS Coding [Bootcamp](https://bootcamp.sas.upenn.edu/).  
+
+The idea for the application came from trying to teach my daughter the importance of helping others in our community and how to get started “doing good deeds”. While trying to search for a local charity we found ourselves reviewing 100 different links, websites, and reviews. There had to be a better way to do this ...
+
+Many of us are not aware of what charities are in our area, and what events they host. GoodDeeds was created to address this as a one-stop app that makes it easier for everyone to find where to donate their time, money, and efforts in helping others and improving their communities.
+
+## Deployed [GoodDeeds](https://limitless-harbor-38694.herokuapp.com/) app on Heroku!
+
+## <a name="about-this-app"></a> Application Overview
+The application's main page will request for the user to allow geolocation. Once geolocation is allowed the page is divided in 2 sections with 2 maps.  Top section will automatically suggest 3 local charities and map them.  Bottom section will automatically suggest 5 charity events within a 25 mile radius in a carousel style card slider. 
+
+If the user would like to see more results a search option was created.  This option will allow the user search using a Zip Code, Radius (miles), and either a Charity/Charity Event options must be selected.  Results will be displayed in "cards" under the map, the user may also scroll through the results and side swipe for more.  Also, the map will display "pins" for locations.  Pins will take to a site with more details about the charity; This can also be acomplished from the result page "cards" by selecting the "MORE INFO" button. 
+
+## <a name="getting-started"></a> Getting Started
 
 - To begin we recommend that you checkout our [Presentation](https://docs.google.com/presentation/d/1pO-N2DIgKoBmlrJ0XbjlgqDsIfM6vazRnIX6vr50us4/edit?usp=sharing) prior to running our application !
 
 - Next you will want to request api keys from:
   Event brite API | Google Maps API | Charity Navigator API
 
-* After you have optained the API keys, make a git clone of our repository.
+## <a name="how-to"></a> How to Run Application
+These steps are taken in your terminal:
+
+* After you have optained the API keys, make a clone of our repository from Github.
+<pre>git clone [link]</pre>
 
 * Run npm i to download the node modules
+<pre>npm i</pre>
 
 * Run the command mongod in your root terminal, do the same with mongo to launch your server.
+<pre>mongod</pre>
 
 * Run npm start in the GOODDEEDS root folder to launch our application.
+<pre>npm start</pre>
 
 * ENJOY!!!
 
-## Our team is continuing to develop our application, if you encounter any issues please let us know.
-
-### We would love to get you a pitcher of beer, hangout and talk about coding sometime :)
-
-## Built with:
+## <a name="technologies-used"></a> Technologies used to build app
 
 - [Express npm package](https://www.npmjs.com/package/express)
 - [Google Fonts](https://fonts.google.com/)
@@ -49,11 +82,27 @@
 - [React-router-dom](https://www.npmjs.com/package/react-router-dom)
 - [Validator](https://validatejs.org/)
 
-## Our Mission & Motivation for Development
+## <a name="demo"></a> Video Demonstrations
 
-Concept: The idea for the application came from trying to teach my daughter the importance of helping others in our community and how to get started “doing good deeds”. While trying to search for a local charity we found ourselves reviewing 100 different links, websites, and reviews. There had to be a better way to do this ...
+### <a name="geolocation"></a> Geolocation
 
-Many of us are not aware of what charities are in our area, and what events they host. GoodDeeds was created to address this as a one-stop app that makes it easier for everyone to find where to donate their time, money, and efforts in helping others and improving their communities.
+![](public/images/Geolocation.gif)
+
+### <a name="more-charity"></a> Main Page Charity Suggestions
+
+![](public/images/MoreCharity.gif)
+
+### <a name="scroll"></a> Main Page Overview
+
+![](public/images/Scroll.gif)
+
+### <a name="charity-events"></a> Main Page Charity Event Suggestions
+
+![](public/images/Events.gif)
+
+### <a name="searching"></a> Searching
+
+![](public/images/Searching.gif)
 
 ## Our Plans for Future Development
 
@@ -68,6 +117,15 @@ Many of us are not aware of what charities are in our area, and what events they
 - Creation of categories (i.e children support, religious, disaster relief) and suggestions based on previous Good Deeds of the user for future Good Deeds.
 - Full app built in React.
 
-## Website will be gifted to a caring cause that supports our Good Deeds Values
+## <a name ="Issues"></a> Issues
 
-## Checkout our [GoodDeeds](https://limitless-harbor-38694.herokuapp.com/) app on Heroku!
+<p>Our team is continuing to develop our application, if you encounter any issues please let us know.</p>
+
+## <a name="author"></a> Authors
+
+* Ruben Galleguillos - [Ruben Galleguillos](https://rhgcodes.github.io/)
+* Dirk Kiesewetter - [Dirk Kiesewetter](https://dirk-kiesewetter.github.io/Bootstrap-Portfolio/)
+* Nathan Schmidt - [Nathan Schmidt](https://natedogg484.github.io/bootstrap-portfolio/)
+* Michael Pohlman - [Michael Pohlman](https://github.com/mpohlman17)
+
+## We would love to get you a pitcher of beer, hangout and talk about coding sometime :) 
